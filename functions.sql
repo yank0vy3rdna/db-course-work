@@ -1,10 +1,10 @@
-create or replace function future_excursions_count() returns int as
+create or replace function future_excursions_count() returns bigint as
 $$
 SELECT count(id) as result
 from "ГРУППА"
 where "ВРЕМЯ" > now();
 $$ language sql;
-create or replace function accredited_guides_count() returns int as
+create or replace function accredited_guides_count() returns bigint as
 $$
 SELECT count(DISTINCT "МОБИЛЬНЫЙ_НОМЕР") as result
 from "ГИД"
